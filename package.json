@@ -1,0 +1,17 @@
+{
+  "name": "express-athena",
+  "version": "0.0.1-alpha",
+  "description": "Simple web server with dom selection support",
+  "main": "index.js",
+  "scripts": {
+    "start": "nodemon index.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "Rulo Kobashikawa",
+  "license": "MIT",
+  "dependencies": {
+    "cheerio": "^1.0.0-rc.2",
+    "express": "^4.16.3"
+  }
+}
