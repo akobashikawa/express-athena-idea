@@ -18,3 +18,9 @@ It works for a url. It needs run render.
 May be it could be useful for a service that provide selector for external sites.
 
 We need also something running for all services.
+
+## Trying as an interceptor
+
+The idea is intercept response in order to apply cheerio before to serve.
+
+I use [express-static-compiler](https://www.npmjs.com/package/express-static-compiler) for that
