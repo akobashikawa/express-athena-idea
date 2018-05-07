@@ -11,6 +11,7 @@ This is an implementation of the idea, using route `/public` parameter `querySel
 - `$ npm install`
 - `$ npm start`
 - http://localhost:3000/public/index.html?querySelector=.title
+- http://localhost:3000/remote?url=http://rulo.me&querySelector=.section__title
 
 ## Trying as an interceptor
 
