@@ -13,8 +13,7 @@ This is an implementation of the idea, using route `/public` parameter `querySel
 - http://localhost:3000/public/index.html?querySelector=.title
 - http://localhost:3000/remote?url=http://rulo.me&querySelector=.section__title
 
-## Trying as an interceptor
+## How to
 
 The idea is intercept response in order to apply cheerio before to serve.
 
-I use [express-static-compiler](https://www.npmjs.com/package/express-static-compiler) for that
