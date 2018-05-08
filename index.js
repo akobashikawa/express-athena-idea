@@ -7,6 +7,32 @@ const axios = require('axios');
 const app = express();
 app.use(morgan('dev'));
 
+app.use('/', staticCompiler('public', {
+  extensions: ['.html'],
+  processor: function(data, cb, filename, req) {
+    const querySelector = req.query.querySelector;
+    const $ = cheerio.load(data);
+    $("[data-url]").each(function(i, elem) {
+      const self = $(this);
+      const params = self.data();
+      console.log(params.url);
+      self.html(params.url);
+      axios(params.url)
+        .then(response => {
+          const data = response.data;
+          const $remote = cheerio.load(data);
+          const remoteResult = $remote.html(params.queryselector);
+          console.log(remoteResult);
+          self.html(remoteResult);// why not work?
+        })
+        .catch(err => console.log(err));
+    });
+    // const result = $.html(querySelector);
+    const result = $.html();
+    cb(null, result);
+  }
+}));
+
 app.use('/public', staticCompiler('public', {
   extensions: ['.html'],
   processor: function(data, cb, filename, req) {
